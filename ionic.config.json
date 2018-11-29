@@ -1,5 +1,7 @@
 {
   "name": "iPago",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

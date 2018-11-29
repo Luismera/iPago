@@ -1,0 +1,27 @@
+
+<ion-content padding>
+  <img src="../assets/imgs/logo_1.png" id="logo-login" class="animated tada">
+  <ion-list class="form-login animated fadeIn">
+    <ion-item class="form-username">
+      <ion-input type="text" placeholder="EMAIL O CELULAR" clearInput></ion-input>
+    </ion-item>
+    <ion-item class="form-password">
+      <ion-input type="password" placeholder="CONTRASEÑA" clearInput></ion-input>
+    </ion-item>
+  </ion-list>
+  <ion-grid class="animated fadeInDown">
+    <ion-row>
+      <ion-col>
+        <ion-item class="item-remember">
+          <ion-label>Recordar</ion-label>
+          <ion-checkbox [(ngModel)]="pepperoni"></ion-checkbox>
+        </ion-item>
+      </ion-col>
+      <ion-col class="right-text">
+        <a href="#" class="link-forgot">Olvidé mi contraseña</a>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <button class="animated fadeInUp" ion-button round outline block color="secondary" (tap)="login()">Ingresa</button>
+  <p class="animated fadeInUp signup-here">¿Eres nuevo? <a href="#">Registrate aqui</a></p>
+</ion-content>

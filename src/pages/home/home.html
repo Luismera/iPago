@@ -1,18 +1,10 @@
-<ion-header>
-  <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
-
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <div class="valign-wrapper">
+    <div>
+      <img src="../assets/imgs/logo.png" id="logo-home" class="animated bounceIn">
+      <h3 class="subtitle-home animated fadeInDown">TU BILLETERA DIGITAL</h3>
+      <button ion-button round outline block color="secondary" (tap)="login()" class="animated fadeIn">Ingresa</button>
+      <button ion-button round block color="secondary" class="button-gradient-secondary animated fadeIn">Crea tu billetera</button>
+    </div>
+  </div>
 </ion-content>
