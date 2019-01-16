@@ -1,0 +1,37 @@
+<ion-header transparent no-border>
+
+    <ion-navbar>
+        <ion-title>INTRODUCE EL CÓDIGO</ion-title>
+    </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+    <div>
+        <div>
+            <p class="text-intro">Estamos validando tu cuenta, para ello introduce el código enviado por SMS al <span class="phone">000 000 0000</span></p>
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-3>
+                        <input type="text">
+                    </ion-col>
+                    <ion-col col-3>
+                        <input type="text">
+                    </ion-col>
+                    <ion-col col-3>
+                        <input type="text">
+                    </ion-col>
+                    <ion-col col-3>
+                        <input type="text">
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
+        <div>
+            <button ion-button round outline block color="secondary" (tap)="verifyAccount()" class="animated fadeIn">CONTINUAR</button>
+        </div>
+    </div>
+
+</ion-content>

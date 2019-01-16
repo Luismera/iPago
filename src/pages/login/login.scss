@@ -1,66 +1,66 @@
 page-login {
-    ion-content{
+    ion-content {
         background: url(../assets/imgs/bg_1.png);
         background-size: cover;
     }
-    #logo-login{
+    #logo-login {
         max-width: 35%;
         display: block;
-        margin: 28% auto;
+        margin: 45% auto 16%;
     }
-    .grid{
+    .grid {
         padding: 0;
-        .col{
+        .col {
             padding: 0;
         }
     }
-    .item-remember{
+    .item-remember {
         background: transparent;
         padding: 0;
         min-height: initial;
-        .item-inner{
+        .item-inner {
             border-bottom: 0 !important;
         }
-        .checkbox{
+        .checkbox {
             margin: 0px 9px 0px 4px !important;
         }
-        .label{
+        .label {
             margin: 0px 0px 0px 0 !important;
             color: #fff;
         }
     }
-    .link-forgot{
+    .link-forgot {
         color: #fff;
         text-decoration: none;
     }
-    .signup-here{
+    .signup-here {
         text-align: center;
         color: #fff;
-        a{
+        a {
             color: color($colors, secondary);
             text-decoration: none;
         }
     }
-    button[block]{
+    button[block] {
         margin: 25px auto;
     }
-    .form-login{
-        .item{
+    .form-login {
+        .item {
             background-color: transparent;
             background-repeat: no-repeat;
             background-position: 6px center;
             background-size: 24px;
             padding-left: 0;
-            &.form-username{
+            &.form-username {
                 background-image: url(../assets/imgs/icon_1.png);
                 margin-bottom: 20px;
             }
-            &.form-password{
+            &.form-password {
                 background-image: url(../assets/imgs/icon_2.png)
             }
-            .item-inner{
+            .item-inner {
                 padding-right: 0;
-                .text-input{
+                .text-input {
                     padding-left: 30px;
                     padding-right: 0;
                     color: #fff;
@@ -71,11 +71,9 @@ page-login {
     .text-input::-moz-placeholder {
         color: white;
     }
-    
     .text-input:-ms-input-placeholder {
         color: white;
     }
-    
     .text-input::-webkit-input-placeholder {
         text-indent: 0;
         color: white;

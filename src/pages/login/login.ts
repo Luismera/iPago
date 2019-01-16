@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-import { HomePage } from '../home/home';
+import { SigninPage } from '../signin/signin';
 
 @Component({
   selector: 'page-login',
@@ -15,8 +15,8 @@ export class LoginPage {
     console.log('ionViewDidLoad LoginPage');
   }
 
-  login(){
-    this.navCtrl.push(HomePage)
+  signin(){
+    this.navCtrl.push(SigninPage)
   }
 
 }

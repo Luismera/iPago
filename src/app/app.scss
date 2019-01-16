@@ -1,15 +1,16 @@
-.button-gradient-secondary{
+.button-gradient-secondary {
     color: #fff;
     background: #fbbb00;
     background: -moz-linear-gradient(left, #fbbb00 0%, #fcc621 50%, #fcee21 100%);
-    background: -webkit-linear-gradient(left, #fbbb00 0%,#fcc621 50%,#fcee21 100%);
-    background: linear-gradient(to right, #fbbb00 0%,#fcc621 50%,#fcee21 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fbbb00', endColorstr='#fcee21',GradientType=1 );
+    background: -webkit-linear-gradient(left, #fbbb00 0%, #fcc621 50%, #fcee21 100%);
+    background: linear-gradient(to right, #fbbb00 0%, #fcc621 50%, #fcee21 100%);
 }
-button[outline]{
+
+button[outline] {
     color: #fff;
 }
-button[block]{
+
+button[block] {
     max-width: 66%;
     margin: 12px auto;
 }
@@ -26,9 +27,15 @@ button[block]{
     height: 100%;
     justify-content: center;
 }
-.right-text{
-    text-align: right; 
+
+.right-text {
+    text-align: right;
 }
-.center-text{
-    text-align: center; 
+
+.center-text {
+    text-align: center;
+}
+
+ion-header[transparent] .toolbar-background {
+    background: transparent;
 }

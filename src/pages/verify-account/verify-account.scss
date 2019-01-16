@@ -1,0 +1,50 @@
+page-verify-account {
+    ion-content {
+        background: url(../assets/imgs/bg_2.png);
+        background-size: cover;
+    }
+    .back-button,
+    .toolbar-title {
+        color: #fff !important;
+    }
+    input,
+    select {
+        display: block;
+        height: 28px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 0;
+        margin-bottom: 10px;
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+    select {
+        -webkit-appearance: none;
+        background-image: url(../assets/imgs/icon-select.png);
+        background-position: 90% center;
+        background-repeat: no-repeat;
+        padding-right: 10px;
+    }
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    .grid {
+        padding: 0;
+    }
+    .text-intro {
+        font-size: 13px;
+        color: #fff;
+        text-align: center;
+        .phone {
+            color: #F9AD15;
+        }
+    }
+    button[block] {
+        margin: 60px auto 0;
+    }
+}

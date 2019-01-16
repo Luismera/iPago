@@ -8,25 +8,46 @@ import { MyApp } from './app.component';
 // PAGES
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
+import { SigninPage } from '../pages/signin/signin';
+import { VerifyAccountPage } from '../pages/verify-account/verify-account';
+import { DashboardPage } from '../pages/dashboard/dashboard';
+import { ForgotPage } from '../pages/forgot/forgot';
+import { NewPasswordPage } from '../pages/new-password/new-password';
 
+// NATIVE
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SigninPage,
+    VerifyAccountPage,
+    DashboardPage,
+    ForgotPage,
+    NewPasswordPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp, {
+      backButtonText: '',
+      backButtonIcon: 'ios-arrow-dropleft'
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    SigninPage,
+    VerifyAccountPage,
+    DashboardPage,
+    ForgotPage,
+    NewPasswordPage
   ],
   providers: [
     StatusBar,

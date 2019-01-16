@@ -1,0 +1,65 @@
+page-signin {
+    ion-content {
+        background: url(../assets/imgs/bg_2.png);
+        background-size: cover;
+    }
+    .back-button,
+    .toolbar-title {
+        color: #fff !important;
+    }
+    label {
+        display: block;
+        color: #fff;
+        font-size: 13px;
+        font-weight: 400;
+        margin-bottom: 4px;
+    }
+    input,
+    select {
+        display: block;
+        height: 28px;
+        width: 100%;
+        box-sizing: border-box;
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.7);
+        border: 0;
+        margin-bottom: 10px;
+        &:focus {
+            background-color: rgba(255, 255, 255, 0.9);
+        }
+    }
+    select {
+        -webkit-appearance: none;
+        background-image: url(../assets/imgs/icon-select.png);
+        background-position: 90% center;
+        background-repeat: no-repeat;
+        padding-right: 10px;
+    }
+    .row {
+        margin-left: -5px;
+        margin-right: -5px;
+    }
+    .grid {
+        padding: 0;
+    }
+    .text-help {
+        font-size: 11px;
+        color: #fff;
+    }
+    button[block] {
+        margin: 23px auto;
+    }
+    #signin-country,
+    #signin-type-identify {
+        width: 15%;
+        float: left;
+        border-radius: 5px 0 0 5px;
+        background-color: #D8D8D8;
+    }
+    #signin-phone,
+    #signin-identify {
+        width: 85%;
+        border-radius: 0 5px 5px 0;
+    }
+}

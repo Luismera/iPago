@@ -1,20 +1,19 @@
 page-home {
-    ion-content{
+    ion-content {
         background: url(../assets/imgs/bg_2.png);
         background-size: cover;
     }
-    #logo-home{
-        max-width: 56%;
+    #logo-home {
+        max-width: 70%;
         height: auto;
-        margin: auto;
+        margin: 0 auto 20px;
         display: block;
     }
-    .subtitle-home{
+    .subtitle-home {
         color: #fff;
         font-size: 16px;
         text-align: center;
         margin: 0;
         margin-bottom: 7%;
     }
-    
 }
