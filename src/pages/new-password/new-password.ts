@@ -17,7 +17,7 @@ export class NewPasswordPage {
   }
 
   successChangePassword(){
-    this.navCtrl.push(DashboardPage)
+    this.navCtrl.setRoot(DashboardPage)
   }
 
 }

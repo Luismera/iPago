@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SigninPage } from '../signin/signin';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @Component({
   selector: 'page-login',
@@ -13,6 +14,10 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
+  }
+
+  login(){
+    this.navCtrl.setRoot(DashboardPage)
   }
 
   signin(){

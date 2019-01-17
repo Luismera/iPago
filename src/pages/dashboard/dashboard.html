@@ -1,15 +1,42 @@
-<ion-header>
-
-    <ion-navbar hideBackButton>
-        <button ion-button menuToggle>
-            <ion-icon name="menu"></ion-icon>
-        </button>
-        <ion-title>dashboard</ion-title>
-    </ion-navbar>
-
-</ion-header>
-
-
-<ion-content padding>
-
+<ion-content>
+    <div id="header-dash">
+        <div class="nav-dash">
+            <button class="left animated slideInLeft" menuToggle>
+                <img src="assets/imgs/icon_menu.png">
+            </button>
+            <button class="right animated swing">
+                <img src="assets/imgs/icon_4.png">
+            </button>
+        </div>
+        <div class="info-account animated fadeIn">
+            <img src="assets/imgs/profile.png" class="photo">
+            <div class="name">Usuario</div>
+            <div class="phone">000 000 0000</div>
+        </div>
+        <div class="info-balance animated slideInRight">
+            <div class="label-balance">Saldo Tarjeta Platy</div>
+            <div class="value-balance">$0,00</div>
+        </div>
+    </div>
+    <div id="content-dash">
+        <button ion-button clear full class="add-card animated fadeIn">Agregar Tarjeta <ion-icon name="add"></ion-icon></button>
+    </div>
+    <div id="content-dash">
+        <br>
+        <br>
+        <br>
+        <img src="assets/imgs/t_2.png" alt="">
+        <br>
+        <br>
+        <img src="assets/imgs/t_1.png" alt="">
+    </div>
 </ion-content>
+
+<ion-footer id="footer-dash">
+    <ion-toolbar>
+        <button id="wallet" class="btn-tab active"></button>
+        <button id="forex" class="btn-tab"></button>
+        <button id="store" class="btn-tab"></button>
+        <button id="profile" class="btn-tab"></button>
+    </ion-toolbar>
+</ion-footer>

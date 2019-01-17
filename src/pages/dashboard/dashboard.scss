@@ -1,3 +1,143 @@
 page-dashboard {
-
+    #header-dash {
+        height: 180px;
+        width: 100%;
+        background-image: url(../assets/imgs/bg_dash_1.png);
+        background-size: 100% 100%;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        position: relative;
+        .nav-dash {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 55px;
+            z-index: 999999;
+            &::before,
+            &::after {
+                contain: "";
+                display: block;
+                clear: both;
+            }
+            button {
+                background: none;
+                width: 43px;
+                height: 43px;
+                margin: 5px 9px;
+                img {
+                    width: 100%;
+                    height: auto;
+                }
+            }
+            .left {
+                float: left;
+            }
+            .right {
+                float: right;
+            }
+        }
+        .info-balance {
+            background-image: url(../assets/imgs/bg_dash_2.png);
+            background-size: auto 100%;
+            background-position: 100% 0;
+            background-repeat: no-repeat;
+            width: 200px;
+            height: 100%;
+            display: block;
+            position: absolute;
+            right: 0;
+            text-align: right;
+            top: 0;
+            padding: 75px 18px 0 0;
+            .label-balance {
+                font-family: 'ubunturegular';
+                font-size: 16px;
+                color: #fff;
+                margin-bottom: 5px;
+                line-height: 1;
+            }
+            .value-balance {
+                font-size: 32px;
+                font-family: 'ubuntubold';
+                color: #fff;
+                line-height: 1;
+            }
+        }
+        .info-account {
+            text-align: center;
+            max-width: 117px;
+            padding-top: 72px;
+            .photo {
+                width: 57px;
+                height: 57px;
+                border-radius: 50%;
+            }
+            .name {
+                color: #051E38;
+                font-size: 17px;
+                font-family: 'ubuntubold';
+                padding: 0 3px;
+            }
+            .phone {
+                color: #A59D90;
+                font-size: 10px;
+                font-family: 'ubuntulight';
+            }
+        }
+    }
+    .add-card {
+        margin: 0;
+        height: 41px;
+        border-bottom: 1px solid rgba(160, 160, 160, 0.58);
+        box-shadow: 0 6px 30px rgba(146, 146, 146, 0.15);
+        color: #0A2D4C;
+        font-family: 'ubunturegular';
+        font-size: 13px;
+        text-transform: capitalize;
+        .button-inner {
+            justify-content: left
+        }
+        ion-icon {
+            color: #FCBD10;
+            font-size: 21px;
+            position: absolute;
+            right: 1.1em;
+        }
+    }
+    #footer-dash {
+        text-align: center;
+        .btn-tab {
+            display: inline-block;
+            height: 56px;
+            width: 24%;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 48%;
+            background-color: transparent;
+            &#wallet {
+                background-image: url(../assets/imgs/icon_5.png);
+            }
+            &#wallet.active {
+                background-image: url(../assets/imgs/icon_5_h.png);
+            }
+            &#forex {
+                background-image: url(../assets/imgs/icon_6.png);
+            }
+            &#forex.active {
+                background-image: url(../assets/imgs/icon_6_h.png);
+            }
+            &#store {
+                background-image: url(../assets/imgs/icon_7.png);
+            }
+            &#store.active {
+                background-image: url(../assets/imgs/icon_7_h.png);
+            }
+            &#profile {
+                background-image: url(../assets/imgs/icon_8.png);
+            }
+            &#profile.active {
+                background-image: url(../assets/imgs/icon_8_h.png);
+            }
+        }
+    }
 }
