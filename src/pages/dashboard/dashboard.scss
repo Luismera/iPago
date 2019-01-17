@@ -34,6 +34,9 @@ page-dashboard {
             }
             .right {
                 float: right;
+                img {
+                    width: 59%;
+                }
             }
         }
         .info-balance {
@@ -112,7 +115,7 @@ page-dashboard {
             width: 24%;
             background-position: center center;
             background-repeat: no-repeat;
-            background-size: 48%;
+            background-size: 38%;
             background-color: transparent;
             &#wallet {
                 background-image: url(../assets/imgs/icon_5.png);

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SigninPage } from '../signin/signin';
 import { DashboardPage } from '../dashboard/dashboard';
+import { NewPasswordPage } from '../new-password/new-password';
 
 @Component({
   selector: 'page-login',
@@ -22,6 +23,10 @@ export class LoginPage {
 
   signin(){
     this.navCtrl.push(SigninPage)
+  }
+
+  forgot(){
+    this.navCtrl.push(NewPasswordPage)
   }
 
 }

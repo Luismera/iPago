@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
-import { NewPasswordPage } from '../new-password/new-password';
+import { DashboardPage } from '../dashboard/dashboard';
 
 @IonicPage()
 @Component({
@@ -17,7 +17,7 @@ export class VerifyAccountPage {
   }
 
   verifyAccount(){
-    this.navCtrl.push(NewPasswordPage)
+    this.navCtrl.push(DashboardPage)
   }
 
 }
