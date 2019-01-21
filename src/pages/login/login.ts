@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { SigninPage } from '../signin/signin';
 import { DashboardPage } from '../dashboard/dashboard';
 import { NewPasswordPage } from '../new-password/new-password';
-import { FormBuilder, FormGroup, Validators, FormControl } from '@angular/forms';
-import { FormProvider } from '../../providers/form/form';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormsProvider } from '../../providers/forms/forms';
 
 @Component({
   selector: 'page-login',
@@ -12,17 +12,26 @@ import { FormProvider } from '../../providers/form/form';
 })
 export class LoginPage {
   
+  public myForm: FormGroup;
   public formErrors = {
-    name: '',
-    email: '',
-    password: '',
+    username: '',
+    password: ''
   };
-  public signUpForm: FormGroup;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
               public form: FormBuilder,
-              public FormService: FormProvider) {
+              private ref: ChangeDetectorRef,
+              public FormService: FormsProvider) {
+    
+    this.myForm = this.buildForm();
+
+    this.myForm.valueChanges.subscribe((data) => {
+      this.formErrors = this.FormService.validateForm(this.myForm, this.formErrors, true)
+      //console.log("errores :", this.formErrors);
+      this.ref.detectChanges();
+    });
+
   }
 
   ionViewDidLoad() {
@@ -32,24 +41,24 @@ export class LoginPage {
 
   // build the user edit form
   public buildForm() {
-    this.signUpForm = this.form.group({
+    return this.form.group({
       username: ['', [Validators.required]],
       password: ['', [Validators.required]],
     });
   }
 
   login(){
-    // mark all fields as touched
-    this.FormService.markFormGroupTouched(this.signUpForm);
+    console.log(this.myForm.value);
 
-    // right before we submit our form to the server we check if the form is valid
-    // if not, we pass the form to the validateform function again. Now with check dirty false
-    // this means we check every form field independent of wether it's touched 
-    if (this.signUpForm.valid) {
+    // mark all fields as touched
+    this.FormService.markFormGroupTouched(this.myForm);
+
+    if(this.myForm.valid){
       this.navCtrl.setRoot(DashboardPage)
-      this.signUpForm.reset();
-    } else {
-      this.formErrors = this.FormService.validateForm(this.signUpForm, this.formErrors, false)
+      this.myForm.reset();
+    }else{
+      this.formErrors = this.FormService.validateForm(this.myForm, this.formErrors, false)
+      this.ref.detectChanges();
     }
   }
 

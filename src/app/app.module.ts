@@ -17,7 +17,7 @@ import { NewPasswordPage } from '../pages/new-password/new-password';
 // NATIVE
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-import { FormProvider } from '../providers/form/form';
+import { FormsProvider } from '../providers/forms/forms';
 
 
 @NgModule({
@@ -53,7 +53,7 @@ import { FormProvider } from '../providers/form/form';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    FormProvider
+    FormsProvider
   ]
 })
 export class AppModule {}

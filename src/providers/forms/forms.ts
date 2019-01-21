@@ -1,49 +1,54 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
 import { FormGroup } from '@angular/forms';
-
+import { Injectable } from '@angular/core';
 
 @Injectable()
-export class FormProvider {
+export class FormsProvider {
+
+  constructor() {
+    console.log('Hello FormsProvider Provider');
+  }
 
   // get all values of the formGroup, loop over them
   // then mark each field as touched
   public markFormGroupTouched(formGroup: FormGroup) {
-    Object.values(formGroup.controls).forEach(control => {
+    (<any>Object).values(formGroup.controls).forEach(control => {
+      //console.log(control);
       control.markAsTouched();
-  
-      if (control.controls) {
+      control.markAsDirty();
+      if (control.controls) { 
           control.controls.forEach(c => this.markFormGroupTouched(c));
       }
     });
   }
 
-  // return list of error messages
-  public validationMessages() {
-    const messages = {
-      required: 'This field is required',
-      email: 'This email address is invalid',
-      invalid_characters: (matches: any[]) => {
+ // return list of error messages
+ // 
+ public validationMessages() {
+  const messages = {
+    required: 'Este campo es obligatorio',
+    email: 'This email address is invalid',
+    invalid_characters: (matches: any[]) => {
 
-        let matchedCharacters = matches;
+      let matchedCharacters = matches;
 
-        matchedCharacters = matchedCharacters.reduce((characterString, character, index) => {
-          let string = characterString;
-          string += character;
+      matchedCharacters = matchedCharacters.reduce((characterString, character, index) => {
+        let string = characterString;
+        string += character;
 
-          if (matchedCharacters.length !== index + 1) {
-            string += ', ';
-          }
+        if (matchedCharacters.length !== index + 1) {
+          string += ', ';
+        }
 
-          return string;
-        }, '');
+        return string;
+      }, '');
 
-        return `These characters are not allowed: ${matchedCharacters}`;
-      },
-    };
+      return `These characters are not allowed: ${matchedCharacters}`;
+    },
+  };
 
-    return messages;
-  }
+  return messages;
+ }
+
 
   // Validate form instance
   // check_dirty true will only emit errors if the field is touched
@@ -74,5 +79,6 @@ export class FormProvider {
 
     return formErrors;
   }
+
 
 }
