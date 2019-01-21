@@ -45,26 +45,29 @@ page-login {
         margin: 25px auto;
     }
     .form-login {
-        .item {
+        .input-item {
             background-color: transparent;
             background-repeat: no-repeat;
             background-position: 6px center;
             background-size: 24px;
-            padding-left: 0;
+            padding-left: 30px;
+            border-bottom: 1px solid #fff;
             &.form-username {
                 background-image: url(../assets/imgs/icon_1.png);
                 margin-bottom: 20px;
             }
             &.form-password {
-                background-image: url(../assets/imgs/icon_2.png)
+                background-image: url(../assets/imgs/icon_2.png);
+                margin-bottom: 15px;
             }
             .item-inner {
                 padding-right: 0;
-                .text-input {
-                    padding-left: 30px;
-                    padding-right: 0;
-                    color: #fff;
-                }
+                .text-input {}
+            }
+            .text-input {
+                padding-left: 0;
+                padding-right: 0;
+                color: #fff;
             }
         }
     }
