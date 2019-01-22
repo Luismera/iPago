@@ -100,7 +100,7 @@
                     <option value="CC">CC</option>
                     <option value="CC">CE</option>
                     </select>
-                    <input type="text" id="signin-identify" formControlName="identify">
+                    <input type="number" id="signin-identify" formControlName="identify">
                     <div *ngIf="formErrors.identify" color="danger" class="form__error">{{ formErrors.identify }}</div>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                     <option value="+57">+57</option>
                     <option value="+62">+62</option>
                     </select>
-                    <input type="tel" id="signin-phone" formControlName="phone">
+                    <input type="number" id="signin-phone" formControlName="phone">
                     <div *ngIf="formErrors.phone" color="danger" class="form__error">{{ formErrors.phone }}</div>
                 </div>
             </div>

@@ -26,7 +26,7 @@ export class FormsProvider {
  public validationMessages() {
   const messages = {
     required: 'Este campo es obligatorio',
-    email: 'This email address is invalid',
+    email: 'Esta dirección de correo electrónico no es válida',
     invalid_characters: (matches: any[]) => {
 
       let matchedCharacters = matches;
