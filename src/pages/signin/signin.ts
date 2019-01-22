@@ -13,8 +13,14 @@ export class SigninPage {
   
   public myForm: FormGroup;
   public formErrors = {
-    username: '',
-    password: ''
+    fullname: '',
+    birthdateYear: '',
+    birthdateMonth: '',
+    birthdateDay: '',
+    identify: '',
+    correo: '',
+    password: '',
+    phone: ''
   };
 
   constructor(public navCtrl: NavController, 
@@ -40,13 +46,30 @@ export class SigninPage {
    // build the user edit form
    public buildForm() {
     return this.form.group({
-      username: ['', [Validators.required]],
+      fullname: ['', [Validators.required]],
+      birthdateYear: ['', [Validators.required]],
+      birthdateMonth: ['', [Validators.required]],
+      birthdateDay: ['', [Validators.required]],
+      identify: ['', [Validators.required]],
+      correo: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required]],
+      phone: ['', [Validators.required]]
     });
   }
 
   signin(){
-    this.navCtrl.push(VerifyAccountPage)
+    console.log(this.myForm.value);
+
+    // mark all fields as touched
+    this.FormService.markFormGroupTouched(this.myForm);
+
+    if(this.myForm.valid){
+      this.navCtrl.push(VerifyAccountPage)
+      this.myForm.reset();
+    }else{
+      this.formErrors = this.FormService.validateForm(this.myForm, this.formErrors, false)
+      this.ref.detectChanges();
+    }
   }
 
 }

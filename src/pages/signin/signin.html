@@ -9,49 +9,34 @@
 
 <ion-content padding>
 
-    <div>
+    <form [formGroup]="myForm" (ngSubmit)="signin()" class="form-signin">
         <div>
-            <label>Tu nombre completo</label>
-            <input type="text">
-        </div>
-        <div>
-            <label>Tu fecha de nacimiento</label>
-            <ion-grid>
-                <ion-row>
-                    <ion-col col-4>
-                        <select>
-                          <option value="">Año</option>
-                          <option value="">2001</option>
-                          <option value="">2001</option>
-                          <option value="">1999</option>
-                          <option value="">1998</option>
-                          <option value="">1997</option>
-                          <option value="">1996</option>
-                          <option value="">1995</option>
-                          <option value="">1994</option>
-                          <option value="">2009</option>
-                        </select>
-                    </ion-col>
-                    <ion-col col-4>
-                        <select>
-                          <option value="">Mes</option>
-                          <option value="">01</option>
-                          <option value="">02</option>
-                          <option value="">03</option>
-                          <option value="">04</option>
-                          <option value="">05</option>
-                          <option value="">06</option>
-                          <option value="">07</option>
-                          <option value="">08</option>
-                          <option value="">09</option>
-                          <option value="">10</option>
-                          <option value="">11</option>
-                          <option value="">12</option>
-                        </select>
-                    </ion-col>
-                    <ion-col col-4>
-                        <select>
-                            <option value="">Día</option>
+            <div>
+                <label>Tu nombre completo</label>
+                <input type="text" formControlName="fullname">
+                <div *ngIf="formErrors.fullname" color="danger" class="form__error">{{ formErrors.fullname }}</div>
+            </div>
+            <div>
+                <label>Tu fecha de nacimiento</label>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-4>
+                            <select formControlName="birthdateYear">
+                            <option value="">Año</option>
+                            <option value="">2001</option>
+                            <option value="">2001</option>
+                            <option value="">1999</option>
+                            <option value="">1998</option>
+                            <option value="">1997</option>
+                            <option value="">1996</option>
+                            <option value="">1995</option>
+                            <option value="">1994</option>
+                            <option value="">2009</option>
+                            </select>
+                        </ion-col>
+                        <ion-col col-4>
+                            <select formControlName="birthdateMonth">
+                            <option value="">Mes</option>
                             <option value="">01</option>
                             <option value="">02</option>
                             <option value="">03</option>
@@ -64,63 +49,88 @@
                             <option value="">10</option>
                             <option value="">11</option>
                             <option value="">12</option>
-                            <option value="">13</option>
-                            <option value="">14</option>
-                            <option value="">15</option>
-                            <option value="">16</option>
-                            <option value="">17</option>
-                            <option value="">18</option>
-                            <option value="">19</option>
-                            <option value="">20</option>
-                            <option value="">21</option>
-                            <option value="">22</option>
-                            <option value="">23</option>
-                            <option value="">24</option>
-                            <option value="">25</option>
-                            <option value="">26</option>
-                            <option value="">27</option>
-                            <option value="">28</option>
-                            <option value="">29</option>
-                            <option value="">30</option>
-                            <option value="">31</option>
-                        </select>
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
-        </div>
-        <div>
-            <label>Tu Identiﬁcación</label>
+                            </select>
+                        </ion-col>
+                        <ion-col col-4>
+                            <select formControlName="birthdateDay">
+                                <option value="">Día</option>
+                                <option value="">01</option>
+                                <option value="">02</option>
+                                <option value="">03</option>
+                                <option value="">04</option>
+                                <option value="">05</option>
+                                <option value="">06</option>
+                                <option value="">07</option>
+                                <option value="">08</option>
+                                <option value="">09</option>
+                                <option value="">10</option>
+                                <option value="">11</option>
+                                <option value="">12</option>
+                                <option value="">13</option>
+                                <option value="">14</option>
+                                <option value="">15</option>
+                                <option value="">16</option>
+                                <option value="">17</option>
+                                <option value="">18</option>
+                                <option value="">19</option>
+                                <option value="">20</option>
+                                <option value="">21</option>
+                                <option value="">22</option>
+                                <option value="">23</option>
+                                <option value="">24</option>
+                                <option value="">25</option>
+                                <option value="">26</option>
+                                <option value="">27</option>
+                                <option value="">28</option>
+                                <option value="">29</option>
+                                <option value="">30</option>
+                                <option value="">31</option>
+                            </select>
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <div *ngIf="formErrors.birthdateDay" color="danger" class="form__error">{{ formErrors.birthdateDay }}</div>
+                <div *ngIf="formErrors.birthdateMonth" color="danger" class="form__error">{{ formErrors.birthdateMonth }}</div>
+                <div *ngIf="formErrors.birthdateYear" color="danger" class="form__error">{{ formErrors.birthdateYear }}</div>
+            </div>
             <div>
-                <select id="signin-type-identify">
-                  <option value="CC">CC</option>
-                  <option value="CC">CE</option>
-                </select>
-                <input type="text" id="signin-identify">
+                <label>Tu Identiﬁcación</label>
+                <div>
+                    <select id="signin-type-identify">
+                    <option value="CC">CC</option>
+                    <option value="CC">CE</option>
+                    </select>
+                    <input type="text" id="signin-identify" formControlName="identify">
+                    <div *ngIf="formErrors.identify" color="danger" class="form__error">{{ formErrors.identify }}</div>
+                </div>
+            </div>
+            <div>
+                <label>Tu correo electrónico</label>
+                <input type="email" formControlName="correo">
+                <div *ngIf="formErrors.correo" color="danger" class="form__error">{{ formErrors.correo }}</div>
+            </div>
+            <div>
+                <label>Contraseña</label>
+                <input type="password" formControlName="password">
+                <div *ngIf="formErrors.password" color="danger" class="form__error">{{ formErrors.password }}</div>
+            </div>
+            <div>
+                <label>Tu número de celular</label>
+                <div>
+                    <select id="signin-country">
+                    <option value="+57">+57</option>
+                    <option value="+62">+62</option>
+                    </select>
+                    <input type="tel" id="signin-phone" formControlName="phone">
+                    <div *ngIf="formErrors.phone" color="danger" class="form__error">{{ formErrors.phone }}</div>
+                </div>
+            </div>
+            <div>
+                <button ion-button round outline block color="secondary" type="submit" class="animated fadeIn">REGISTRARSE</button>
+                <p class="text-help">Al presionar “Registrarse” das por entendido que aceptas las Políticas de Seguridad y Tratamiento de Datos </p>
             </div>
         </div>
-        <div>
-            <label>Tu correo electrónico</label>
-            <input type="email">
-        </div>
-        <div>
-            <label>Contraseña</label>
-            <input type="password">
-        </div>
-        <div>
-            <label>Tu número de celular</label>
-            <div>
-                <select id="signin-country">
-                  <option value="+57">+57</option>
-                  <option value="+62">+62</option>
-                </select>
-                <input type="tel" id="signin-phone">
-            </div>
-        </div>
-        <div>
-            <button ion-button round outline block color="secondary" (tap)="signin()" class="animated fadeIn">REGISTRARSE</button>
-            <p class="text-help">Al presionar “Registrarse” das por entendido que aceptas las Políticas de Seguridad y Tratamiento de Datos </p>
-        </div>
-    </div>
+    </form>
 
 
 </ion-content>
