@@ -52,6 +52,7 @@ page-login {
             background-size: 24px;
             padding-left: 30px;
             border-bottom: 1px solid #fff;
+            position: relative;
             &.form-username {
                 background-image: url(../assets/imgs/icon_1.png);
                 margin-bottom: 20px;
@@ -68,6 +69,12 @@ page-login {
                 padding-left: 0;
                 padding-right: 0;
                 color: #fff;
+            }
+            .form__error {
+                position: absolute;
+                bottom: -20px;
+                left: 0;
+                font-size: 12px;
             }
         }
     }

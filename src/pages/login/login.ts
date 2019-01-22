@@ -36,7 +36,7 @@ export class LoginPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad LoginPage');
-    this.buildForm();
+    //this.buildForm();
   }
 
   // build the user edit form
