@@ -16,16 +16,16 @@
                 <ion-grid>
                     <ion-row>
                         <ion-col col-3>
-                            <input formControlName="code1" type="number" (keyup)="onKey($event)">
+                            <input formControlName="code1" type="text" maxlength="1" OnlyNumber="true">
                         </ion-col>
                         <ion-col col-3>
-                            <input formControlName="code2" type="number" (keyup)="onKey($event)">
+                            <input formControlName="code2" type="number">
                         </ion-col>
                         <ion-col col-3>
-                            <input formControlName="code3" type="number" (keyup)="onKey($event)">
+                            <input formControlName="code3" type="number">
                         </ion-col>
                         <ion-col col-3>
-                            <input formControlName="code4" type="number" (keyup)="onKey($event)">
+                            <input formControlName="code4" type="number">
                         </ion-col>
                     </ion-row>
                 </ion-grid>

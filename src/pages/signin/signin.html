@@ -91,7 +91,9 @@
                         </ion-col>
                     </ion-row>
                 </ion-grid>
-                <div *ngIf="formErrors.birthdateDay != '' || formErrors.birthdateMonth != '' || formErrors.birthdateMonth != ''" color="danger" class="form__error">{{ formErrors.birthdate }}</div>
+                <div *ngIf="formErrors.birthdateDay" color="danger" class="form__error">{{ formErrors.birthdateDay }}</div>
+                <div *ngIf="formErrors.birthdateMonth" color="danger" class="form__error">{{ formErrors.birthdateMonth }}</div>
+                <div *ngIf="formErrors.birthdateMonth" color="danger" class="form__error">{{ formErrors.birthdateMonth }}</div>
             </div>
             <div>
                 <label>Tu Identiﬁcación</label>

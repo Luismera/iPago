@@ -18,6 +18,8 @@ import { NewPasswordPage } from '../pages/new-password/new-password';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { FormsProvider } from '../providers/forms/forms';
+import { DirectivesModule } from '../directives/directives.module';
+import { OnlyNumberDirective } from '../directives/only-number/only-number';
 
 
 @NgModule({
@@ -29,14 +31,15 @@ import { FormsProvider } from '../providers/forms/forms';
     VerifyAccountPage,
     DashboardPage,
     ForgotPage,
-    NewPasswordPage
+    NewPasswordPage,
+    OnlyNumberDirective
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp, {
       backButtonText: '',
       backButtonIcon: 'ios-arrow-dropleft'
-    }),
+    })    
   ],
   bootstrap: [IonicApp],
   entryComponents: [

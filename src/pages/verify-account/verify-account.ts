@@ -13,6 +13,7 @@ export class VerifyAccountPage {
   
   public myForm: FormGroup;
   public formErrors = {
+    code1: '',
     verificationCode: 'El codigo es requerido'
   };
 
@@ -39,11 +40,11 @@ export class VerifyAccountPage {
   // build the user edit form
   public buildForm() {
     return this.form.group({
-      code1: ['', [Validators.required]],
-      code2: ['', [Validators.required]],
-      code3: ['', [Validators.required]],
-      code4: ['', [Validators.required]],
-      verificationCode: ['', [Validators.required, Validators.max(4)]]
+      code1: ['', [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required, Validators.maxLength(1)]],
+      code2: [''],
+      code3: [''],
+      code4: [''],
+      verificationCode: ['']
     });
   }
 
