@@ -17,11 +17,13 @@ export class SigninPage {
     birthdateYear: '',
     birthdateMonth: '',
     birthdateDay: '',
+    birthdate: '',
     identify: '',
     correo: '',
     password: '',
     phone: ''
   };
+  birthdate:any;
 
   constructor(public navCtrl: NavController, 
               public navParams: NavParams,
@@ -43,17 +45,18 @@ export class SigninPage {
     console.log('ionViewDidLoad SigninPage');
   }
 
-   // build the user edit form
-   public buildForm() {
+  // build the user edit form
+  public buildForm() {
     return this.form.group({
-      fullname: ['', [Validators.required]],
-      birthdateYear: ['', [Validators.required]],
-      birthdateMonth: ['', [Validators.required]],
-      birthdateDay: ['', [Validators.required]],
-      identify: ['', [Validators.required]],
-      correo: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required]],
-      phone: ['', [Validators.required]]
+      fullname: ['Luis Mera', [Validators.required]],
+      birthdateYear: ['1992', [Validators.required]],
+      birthdateMonth: ['01', [Validators.required]],
+      birthdateDay: ['17', [Validators.required]],
+      birthdate: ['17/01/1992', [Validators.required]],
+      identify: ['1113654644', [Validators.required]],
+      correo: ['luis@le.com', [Validators.required, Validators.email]],
+      password: ['sol123', [Validators.required]],
+      phone: ['3168250800', [Validators.required]]
     });
   }
 
@@ -62,7 +65,9 @@ export class SigninPage {
 
     // mark all fields as touched
     this.FormService.markFormGroupTouched(this.myForm);
-
+    this.myForm.patchValue({
+      birthdate: "loremipsum"
+    })
     if(this.myForm.valid){
       this.navCtrl.push(VerifyAccountPage)
       this.myForm.reset();

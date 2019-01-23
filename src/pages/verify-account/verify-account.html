@@ -9,29 +9,33 @@
 
 <ion-content padding>
 
-    <div>
+    <form [formGroup]="myForm" (ngSubmit)="verifyAccount()" class="form-verify-account">
         <div>
-            <p class="text-intro">Estamos validando tu cuenta, para ello introduce el código enviado por SMS al <span class="phone">000 000 0000</span></p>
-            <ion-grid>
-                <ion-row>
-                    <ion-col col-3>
-                        <input type="text">
-                    </ion-col>
-                    <ion-col col-3>
-                        <input type="text">
-                    </ion-col>
-                    <ion-col col-3>
-                        <input type="text">
-                    </ion-col>
-                    <ion-col col-3>
-                        <input type="text">
-                    </ion-col>
-                </ion-row>
-            </ion-grid>
+            <div>
+                <p class="text-intro">Estamos validando tu cuenta, para ello introduce el código enviado por SMS al <span class="phone">000 000 0000</span></p>
+                <ion-grid>
+                    <ion-row>
+                        <ion-col col-3>
+                            <input formControlName="code1" type="number" (keyup)="onKey($event)">
+                        </ion-col>
+                        <ion-col col-3>
+                            <input formControlName="code2" type="number" (keyup)="onKey($event)">
+                        </ion-col>
+                        <ion-col col-3>
+                            <input formControlName="code3" type="number" (keyup)="onKey($event)">
+                        </ion-col>
+                        <ion-col col-3>
+                            <input formControlName="code4" type="number" (keyup)="onKey($event)">
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+                <input type="hidden" formControlName="verificationCode">
+                <div *ngIf="formErrors.verificationCode" color="danger" class="form__error">{{ formErrors.verificationCode }}</div>
+            </div>
+            <div>
+                <button ion-button round outline block color="secondary" type="submit" class="animated fadeIn">CONTINUAR</button>
+            </div>
         </div>
-        <div>
-            <button ion-button round outline block color="secondary" (tap)="verifyAccount()" class="animated fadeIn">CONTINUAR</button>
-        </div>
-    </div>
+    </form>
 
 </ion-content>
