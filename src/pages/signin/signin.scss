@@ -31,10 +31,11 @@ page-signin {
     }
     select {
         -webkit-appearance: none;
-        background-image: url(../assets/imgs/icon-select.png);
+        background-image: url(../assets/imgs/icon-select.svg);
         background-position: 90% center;
         background-repeat: no-repeat;
         padding-right: 10px;
+        background-size: 14px;
     }
     .row {
         margin-left: -5px;
