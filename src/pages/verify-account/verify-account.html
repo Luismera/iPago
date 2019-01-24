@@ -16,20 +16,20 @@
                 <ion-grid>
                     <ion-row>
                         <ion-col col-3>
-                            <input formControlName="code1" type="text" maxlength="1" OnlyNumber="true">
+                            <input #input1 (input)="onInputEntry($event, input2)" formControlName="code1" type="text" maxlength="1" OnlyNumber="true" size="1">
                         </ion-col>
                         <ion-col col-3>
-                            <input formControlName="code2" type="number">
+                            <input #input2 (input)="onInputEntry($event, input3)" formControlName="code2" type="text" maxlength="1" OnlyNumber="true" size="1">
                         </ion-col>
                         <ion-col col-3>
-                            <input formControlName="code3" type="number">
+                            <input #input3 (input)="onInputEntry($event, input4)" formControlName="code3" type="text" maxlength="1" OnlyNumber="true" size="1">
                         </ion-col>
                         <ion-col col-3>
-                            <input formControlName="code4" type="number">
+                            <input #input4 (input)="onInputEntry($event, null)" formControlName="code4" type="text" maxlength="1" OnlyNumber="true" size="1">
                         </ion-col>
                     </ion-row>
                 </ion-grid>
-                <input type="hidden" formControlName="verificationCode">
+                <input type="hidden" formControlName="verificationCode" maxlength="4" size="4">
                 <div *ngIf="formErrors.verificationCode" color="danger" class="form__error">{{ formErrors.verificationCode }}</div>
             </div>
             <div>

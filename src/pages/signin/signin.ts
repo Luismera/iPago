@@ -45,16 +45,26 @@ export class SigninPage {
   }
 
   // build the user edit form
+  /*
+  fullname: ['luis mera', [Validators.required]],
+  birthdateYear: ['1992', [Validators.required]],
+  birthdateMonth: ['01', [Validators.required]],
+  birthdateDay: ['17', [Validators.required]],
+  identify: ['1113654644', [Validators.required]],
+  correo: ['luismera92@gmail.com', [Validators.required, Validators.email]],
+  password: ['sol123', [Validators.required]],
+  phone: ['3168250800', [Validators.required]]
+  */
   public buildForm() {
     return this.form.group({
-      fullname: ['luis mera', [Validators.required]],
-      birthdateYear: ['1992', [Validators.required]],
-      birthdateMonth: ['01', [Validators.required]],
-      birthdateDay: ['17', [Validators.required]],
-      identify: ['1113654644', [Validators.required]],
-      correo: ['luismera92@gmail.com', [Validators.required, Validators.email]],
-      password: ['sol123', [Validators.required]],
-      phone: ['3168250800', [Validators.required]]
+      fullname: ['', [Validators.required]],
+      birthdateYear: ['', [Validators.required]],
+      birthdateMonth: ['', [Validators.required]],
+      birthdateDay: ['', [Validators.required]],
+      identify: ['', [Validators.required]],
+      correo: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required]],
+      phone: ['', [Validators.required]]
     });
   }
 

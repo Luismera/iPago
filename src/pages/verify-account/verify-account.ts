@@ -14,7 +14,10 @@ export class VerifyAccountPage {
   public myForm: FormGroup;
   public formErrors = {
     code1: '',
-    verificationCode: 'El codigo es requerido'
+    code2: '',
+    code3: '',
+    code4: '',
+    verificationCode: ''
   };
 
   constructor(public navCtrl: NavController, 
@@ -41,10 +44,10 @@ export class VerifyAccountPage {
   public buildForm() {
     return this.form.group({
       code1: ['', [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required, Validators.maxLength(1)]],
-      code2: [''],
-      code3: [''],
-      code4: [''],
-      verificationCode: ['']
+      code2: ['', [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required, Validators.maxLength(1)]],
+      code3: ['', [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required, Validators.maxLength(1)]],
+      code4: ['', [Validators.pattern(/^-?(0|[1-9]\d*)?$/), Validators.required, Validators.maxLength(1)]],
+      verificationCode: ['', [Validators.required]]
     });
   }
 
@@ -65,8 +68,26 @@ export class VerifyAccountPage {
     }
   }
 
-  onKey(event: any) {
+  onInputEntry(event, nextInput) {
+    let input = event.target;
+    let length = input.value.length;
+    let maxLength = input.attributes.maxlength.value;
+    let allCode = this.myForm.value.code1+this.myForm.value.code2+this.myForm.value.code3+this.myForm.value.code4
+    
+    if (allCode.length >= 4) {
+      this.myForm.patchValue({
+        verificationCode: allCode
+      })
+    }
 
+    if( nextInput == null){
+      this.verifyAccount()
+      return false
+    }
+    
+    if (length >= maxLength) {
+      nextInput.focus();
+    }
   }
 
 }
